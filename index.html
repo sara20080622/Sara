@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>С Днём Рождения!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to top right, #ffdee9, #b5fffc);
+            font-family: 'Segoe UI', sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff4081;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: pop 1.5s ease-out;
+        }
+
+        p {
+            font-size: 1.5em;
+            max-width: 600px;
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .balloons {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background: radial-gradient(circle at 30% 30%, #ff9a9e, #fad0c4);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .balloon:nth-child(2) {
+            left: 30%;
+            animation-delay: 1s;
+        }
+
+        .balloon:nth-child(3) {
+            left: 60%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="balloons">
+        <div class="balloon" style="left: 10%; background: #FFD700;"></div>
+        <div class="balloon" style="left: 40%; background: #FF69B4;"></div>
+        <div class="balloon" style="left: 70%; background: #87CEFA;"></div>
+    </div>
+
+    <h1>Happy birthday,Ayya!</h1>
+    <img src="ayya.jpeg" alt="праздник" width="400">
+    <p>Желаю тебе ярких эмоций, больших побед, искренних улыбок и настоящего счастья каждый день!</p>
+</body>
+</html>
